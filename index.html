@@ -4,27 +4,52 @@
 <script src="script/processing.js"></script>
 <script type="text/processing" data-processing-target="mycanvas">
 
-PImage pear;
+// 1. Setting up the structure of your if statement
+// 2. If statement evaluates to true or false
+// 3. Tabbing code
+// 4. semicolons
 
-void setup(){
-
-size( 650, 300 );
-background(0,0,0);
-frameRate( 30 );
-
-pear = loadImage("images/pear.jpg");
+void setup()
+{
+	
+	size( 650, 300 );
+	frameRate( 30 );
 
 }
 
 
 void draw()
 {
-	image(pear,50,0,200,70);
-	
-	stroke(255,255,255);
-	fill(255,0,0);
-	rect(0,0,50,10);
+	background(0,255,0);
 
+	fill(255,0,0);
+	rect(50,50,200,100);
+	
+	text(mouseX,10,10);
+	rect(50,39,187,299);
+
+	if (mousePressed == true && mouseButton == LEFT)
+	{
+		if (mouseX > 50 && mouseX < 50+187 && 
+			mouseY > 39 && mouseY < 39+299)
+		{
+			text("Your mouse cursor is inside the box"
+				 ,350,50);
+		}
+	}
+	
+	
+	line(50,0,50,350);
+	line(100,0,100,350);
+	line(0,50,650,50);
+	
+	if (mouseY < 50)
+	{
+		text("Y is less than 50",350,100);
+	}
+
+	fill(255,0,0);
+	rect(50,30,200,100);	
 }
 
 </script>
